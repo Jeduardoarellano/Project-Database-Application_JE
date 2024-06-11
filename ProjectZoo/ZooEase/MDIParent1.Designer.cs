@@ -351,6 +351,7 @@
             toolStripButton2.ImageTransparentColor = Color.Magenta;
             toolStripButton2.Name = "toolStripButton2";
             toolStripButton2.Size = new Size(23, 22);
+            toolStripButton2.Tag = "zooAnimals";
             toolStripButton2.Text = "list";
             toolStripButton2.Click += ShowNewForm;
             // 

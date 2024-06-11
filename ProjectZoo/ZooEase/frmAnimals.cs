@@ -105,14 +105,14 @@ namespace ZooEase
                     {
                         if (txtAnimalId.Text == string.Empty)
                         {
-                            if (!IsDuplicateAnimalName(txtAnimalName.Text.Trim()))
+                            if (!IsDuplicateHabitat(txtHabitat.Text.Trim()))
                             {
                                 CreateAnimal();
                                 LoadFirstAnimal();
                             }
                             else
                             {
-                                MessageBox.Show("An animal with this name already exists.");
+                                MessageBox.Show("An animal with this habitat already exists.");
                             }
                         }
                         else
@@ -138,9 +138,9 @@ namespace ZooEase
             }
         }
 
-        private bool IsDuplicateAnimalName(string animalName)
+        private bool IsDuplicateHabitat(string habitat)
         {
-            string sqlCheckDuplicate = $"SELECT COUNT(*) FROM Animals WHERE AnimalName = '{animalName}'";
+            string sqlCheckDuplicate = $"SELECT COUNT(*) FROM Animals WHERE Habitat = '{habitat}'";
             int count = Convert.ToInt32(DataAccess.GetValue(sqlCheckDuplicate));
             return count > 0;
         }

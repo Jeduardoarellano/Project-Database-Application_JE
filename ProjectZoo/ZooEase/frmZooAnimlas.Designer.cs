@@ -55,7 +55,8 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label1.Location = new Point(120, 52);
+            label1.ForeColor = SystemColors.ButtonFace;
+            label1.Location = new Point(120, 37);
             label1.Name = "label1";
             label1.Size = new Size(64, 19);
             label1.TabIndex = 0;
@@ -65,7 +66,8 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label2.Location = new Point(137, 121);
+            label2.ForeColor = SystemColors.ButtonFace;
+            label2.Location = new Point(137, 106);
             label2.Name = "label2";
             label2.Size = new Size(44, 19);
             label2.TabIndex = 1;
@@ -75,7 +77,8 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label3.Location = new Point(115, 159);
+            label3.ForeColor = SystemColors.ButtonFace;
+            label3.Location = new Point(115, 144);
             label3.Name = "label3";
             label3.Size = new Size(71, 19);
             label3.TabIndex = 2;
@@ -85,7 +88,8 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            label4.Location = new Point(119, 87);
+            label4.ForeColor = SystemColors.ButtonFace;
+            label4.Location = new Point(119, 72);
             label4.Name = "label4";
             label4.Size = new Size(67, 19);
             label4.TabIndex = 3;
@@ -94,7 +98,7 @@
             // cmbAnimals
             // 
             cmbAnimals.FormattingEnabled = true;
-            cmbAnimals.Location = new Point(190, 48);
+            cmbAnimals.Location = new Point(190, 33);
             cmbAnimals.Name = "cmbAnimals";
             cmbAnimals.Size = new Size(207, 23);
             cmbAnimals.TabIndex = 4;
@@ -102,7 +106,7 @@
             // 
             // txtSpecies
             // 
-            txtSpecies.Location = new Point(189, 84);
+            txtSpecies.Location = new Point(189, 69);
             txtSpecies.Name = "txtSpecies";
             txtSpecies.ReadOnly = true;
             txtSpecies.Size = new Size(207, 23);
@@ -111,7 +115,7 @@
             // 
             // txtCountry
             // 
-            txtCountry.Location = new Point(190, 158);
+            txtCountry.Location = new Point(190, 143);
             txtCountry.Name = "txtCountry";
             txtCountry.ReadOnly = true;
             txtCountry.Size = new Size(207, 23);
@@ -121,10 +125,10 @@
             // btnCancel
             // 
             btnCancel.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCancel.Location = new Point(373, 262);
+            btnCancel.Location = new Point(345, 264);
             btnCancel.Margin = new Padding(4, 3, 4, 3);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(94, 54);
+            btnCancel.Size = new Size(88, 38);
             btnCancel.TabIndex = 39;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
@@ -133,10 +137,10 @@
             // btnAdd
             // 
             btnAdd.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAdd.Location = new Point(68, 262);
+            btnAdd.Location = new Point(40, 264);
             btnAdd.Margin = new Padding(4, 3, 4, 3);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(94, 54);
+            btnAdd.Size = new Size(88, 38);
             btnAdd.TabIndex = 36;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = true;
@@ -145,10 +149,10 @@
             // btnDelete
             // 
             btnDelete.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDelete.Location = new Point(170, 262);
+            btnDelete.Location = new Point(142, 264);
             btnDelete.Margin = new Padding(4, 3, 4, 3);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(94, 54);
+            btnDelete.Size = new Size(88, 38);
             btnDelete.TabIndex = 37;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
@@ -157,10 +161,10 @@
             // btnSave
             // 
             btnSave.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSave.Location = new Point(271, 262);
+            btnSave.Location = new Point(243, 264);
             btnSave.Margin = new Padding(4, 3, 4, 3);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(94, 54);
+            btnSave.Size = new Size(88, 38);
             btnSave.TabIndex = 38;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
@@ -168,10 +172,11 @@
             // 
             // btnLast
             // 
-            btnLast.Location = new Point(373, 207);
+            btnLast.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnLast.Location = new Point(345, 218);
             btnLast.Margin = new Padding(4, 3, 4, 3);
             btnLast.Name = "btnLast";
-            btnLast.Size = new Size(94, 50);
+            btnLast.Size = new Size(88, 40);
             btnLast.TabIndex = 35;
             btnLast.Text = "Last";
             btnLast.UseVisualStyleBackColor = true;
@@ -179,10 +184,11 @@
             // 
             // btnFirst
             // 
-            btnFirst.Location = new Point(68, 207);
+            btnFirst.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnFirst.Location = new Point(40, 218);
             btnFirst.Margin = new Padding(4, 3, 4, 3);
             btnFirst.Name = "btnFirst";
-            btnFirst.Size = new Size(94, 50);
+            btnFirst.Size = new Size(88, 40);
             btnFirst.TabIndex = 34;
             btnFirst.Text = "First";
             btnFirst.UseVisualStyleBackColor = true;
@@ -190,10 +196,11 @@
             // 
             // btnPrevious
             // 
-            btnPrevious.Location = new Point(170, 207);
+            btnPrevious.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnPrevious.Location = new Point(142, 218);
             btnPrevious.Margin = new Padding(4, 3, 4, 3);
             btnPrevious.Name = "btnPrevious";
-            btnPrevious.Size = new Size(94, 50);
+            btnPrevious.Size = new Size(88, 40);
             btnPrevious.TabIndex = 33;
             btnPrevious.Text = "Previous";
             btnPrevious.UseVisualStyleBackColor = true;
@@ -201,10 +208,11 @@
             // 
             // btnNext
             // 
-            btnNext.Location = new Point(271, 207);
+            btnNext.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnNext.Location = new Point(243, 218);
             btnNext.Margin = new Padding(4, 3, 4, 3);
             btnNext.Name = "btnNext";
-            btnNext.Size = new Size(94, 50);
+            btnNext.Size = new Size(88, 40);
             btnNext.TabIndex = 32;
             btnNext.Text = "Next";
             btnNext.UseVisualStyleBackColor = true;
@@ -216,6 +224,7 @@
             // 
             // grpZooAnimals
             // 
+            grpZooAnimals.BackColor = Color.Transparent;
             grpZooAnimals.Controls.Add(cmbZoo);
             grpZooAnimals.Controls.Add(btnCancel);
             grpZooAnimals.Controls.Add(cmbAnimals);
@@ -232,17 +241,17 @@
             grpZooAnimals.Controls.Add(btnPrevious);
             grpZooAnimals.Controls.Add(btnNext);
             grpZooAnimals.Controls.Add(txtCountry);
-            grpZooAnimals.Location = new Point(89, 47);
+            grpZooAnimals.Location = new Point(150, 127);
             grpZooAnimals.Name = "grpZooAnimals";
-            grpZooAnimals.Size = new Size(513, 339);
+            grpZooAnimals.Size = new Size(522, 309);
             grpZooAnimals.TabIndex = 40;
             grpZooAnimals.TabStop = false;
-            grpZooAnimals.Text = "groupBox1";
+            grpZooAnimals.TabIndexChanged += cmbAnimals_SelectedIndexChanged;
             // 
             // cmbZoo
             // 
             cmbZoo.FormattingEnabled = true;
-            cmbZoo.Location = new Point(194, 123);
+            cmbZoo.Location = new Point(194, 108);
             cmbZoo.Name = "cmbZoo";
             cmbZoo.Size = new Size(202, 23);
             cmbZoo.TabIndex = 40;
@@ -251,9 +260,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.ZooAnimals;
             ClientSize = new Size(714, 448);
             Controls.Add(grpZooAnimals);
             Name = "frmZooAnimlas";
+            Tag = "zooanimals";
             Text = "frmZooAnimlas";
             Load += frmZooAnimlas_Load;
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();

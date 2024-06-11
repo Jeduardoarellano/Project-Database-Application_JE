@@ -33,49 +33,6 @@ namespace ZooEase
             InitializeComponent();
         }
 
-        private void SetState(FormState state)
-        {
-            currentState = state;
-            LoadState(state);
-        }
-
-        private void LoadState(FormState state)
-        {
-            if (state == FormState.View)
-            {
-                btnAdd.Enabled = true;
-                btnCancel.Enabled = false;
-                btnDelete.Enabled = true;
-                btnSave.Text = "Edit";
-                AllowInputs(false);
-                errorProvider1.Clear();
-            }
-            else
-            {
-                btnAdd.Enabled = false;
-                btnCancel.Enabled = true;
-                btnDelete.Enabled = false;
-                btnSave.Text = "Save";
-
-                AllowInputs(true);
-                if (state == FormState.Add)
-                {
-                    grpZooAnimals.ClearChildControls(defaultSelectedIndex: -1);
-                }
-            }
-
-            EnableNavigation(currentState == FormState.View);
-        }
-
-
-        private void AllowInputs(bool allowInput)
-        {
-            txtSpecies.ReadOnly = !allowInput;
-            cmbZoo.Enabled = !allowInput;
-            txtCountry.ReadOnly = !allowInput;
-            cmbAnimals.Enabled = allowInput;
-        }
-
         #region Event Handlers
 
         private void frmZooAnimlas_Load(object sender, EventArgs e)
@@ -86,6 +43,8 @@ namespace ZooEase
                 LoadZoos();
                 LoadFirstZoo_Animal();
                 EnableNavigation(true);
+
+                cmbAnimals.SelectedIndexChanged += cmbAnimals_SelectedIndexChanged;
             }
             catch (Exception ex)
             {
@@ -98,6 +57,7 @@ namespace ZooEase
             try
             {
                 LoadAnimals();
+                LoadZoos();
                 SetState(FormState.Add);
             }
             catch (Exception ex)
@@ -163,12 +123,56 @@ namespace ZooEase
             try
             {
                 SetState(FormState.View);
-                LoadAnimalDetails(currentAnimalId);
+                LoadCurrentPosition();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
+        }
+
+
+        private void SetState(FormState state)
+        {
+            currentState = state;
+            LoadState(state);
+        }
+
+        private void LoadState(FormState state)
+        {
+            if (state == FormState.View)
+            {
+                btnAdd.Enabled = true;
+                btnCancel.Enabled = false;
+                btnDelete.Enabled = true;
+                btnSave.Text = "Edit";
+                AllowInputs(false);
+                errorProvider1.Clear();
+            }
+            else
+            {
+                btnAdd.Enabled = false;
+                btnCancel.Enabled = true;
+                btnDelete.Enabled = false;
+                btnSave.Text = "Save";
+
+                AllowInputs(true);
+                if (state == FormState.Add)
+                {
+                    grpZooAnimals.ClearChildControls(defaultSelectedIndex: -1);
+                }
+            }
+
+            EnableNavigation(currentState == FormState.View);
+        }
+
+
+        private void AllowInputs(bool allowInput)
+        {
+            txtSpecies.ReadOnly = !allowInput;
+            txtCountry.ReadOnly = !allowInput;
+            cmbZoo.Enabled = allowInput;
+            cmbAnimals.Enabled = allowInput;
         }
 
         #endregion
@@ -179,8 +183,8 @@ namespace ZooEase
             {
                 if (cmbAnimals.SelectedIndex != -1)
                 {
-                    currentAnimalId = (int)cmbAnimals.SelectedValue;
-                    LoadAnimalDetails(currentAnimalId);
+                    currentAnimalId = Convert.ToInt32(cmbAnimals.SelectedValue);
+                    LoadAnimalDetails(currentAnimalId, currentZooId);
                     LoadCurrentPosition();
                     EnableNavigation(true);
                 }
@@ -216,10 +220,10 @@ namespace ZooEase
             cmbZoo.SelectedIndex = -1;
         }
 
-        private void LoadAnimalDetails(int animalId)
+        private void LoadAnimalDetails(int animalId, int zooId)
         {
             string sql = $@"
-                SELECT a.AnimalName, a.Species, z.ZooId, z.Country 
+                SELECT a.AnimalId, a.AnimalName, a.Species, z.ZooId, z.Country 
                 FROM Animals a
                 JOIN Zoo_Animals za ON a.AnimalId = za.AnimalId
                 JOIN Zoo z ON za.ZooId = z.ZooId
@@ -231,28 +235,28 @@ namespace ZooEase
             {
                 DataRow row = dtAnimalDetails.Rows[0];
                 txtSpecies.Text = row["Species"].ToString();
+                cmbAnimals.SelectedValue = Convert.ToInt32(row["AnimalId"].ToString());
                 cmbZoo.SelectedValue = Convert.ToInt32( row["ZooId"].ToString());
                 txtCountry.Text = row["Country"].ToString();
             }
 
-            txtSpecies.Clear();
-            txtCountry.Clear();
         }
 
         private void LoadFirstZoo_Animal()
         {
             string sql = @"
                     SELECT TOP 1 a.AnimalId 
-                    FROM Animals a
-                    JOIN Zoo_Animals za ON a.AnimalId = za.AnimalId
-                    ORDER BY a.AnimalName";
+                    FROM Zoo_Animals a
+                    JOIN Animals za ON a.AnimalId = za.AnimalId
+                    ORDER BY a.AnimalID";
 
             DataTable firstAnimal = DataAccess.GetData(sql);
             if (firstAnimal.Rows.Count > 0)
             {
                 firstAnimalId = Convert.ToInt32(firstAnimal.Rows[0]["AnimalId"]);
                 currentAnimalId = firstAnimalId;
-                LoadAnimalDetails(currentAnimalId);
+
+                LoadAnimalDetails(currentAnimalId, currentZooId);
                 LoadCurrentPosition();
             }
         }
@@ -265,15 +269,17 @@ namespace ZooEase
                     z.NextZooId,
                     z.PreviousAnimalId,
                     z.PreviousZooId,
-                    (SELECT TOP 1 AnimalId FROM Animals ORDER BY AnimalId) AS FirstAnimalId,
-                    (SELECT TOP 1 AnimalId FROM Animals ORDER BY AnimalId DESC) AS LastAnimalId,
-                    (SELECT TOP 1 ZooId FROM Animals ORDER BY AnimalId) AS FirstZooIdId,
-                    (SELECT TOP 1 ZooId FROM Animals ORDER BY AnimalId DESC) AS LastZooId,
-                    z.RowNumber
+                    z.RowNumber,
+                    (SELECT TOP 1 AnimalId FROM Zoo_Animals ORDER BY AnimalId) AS FirstAnimalId,
+                    (SELECT TOP 1 ZooId FROM Zoo_Animals ORDER BY ZooID) AS FirstZooId,
+                    (SELECT TOP 1 AnimalId FROM Zoo_Animals ORDER BY AnimalId DESC) AS LastAnimalId,
+                    (SELECT TOP 1 ZooId FROM Zoo_Animals ORDER BY ZooID DESC) AS LastZooId
+                    
                 FROM(
                     SELECT AnimalId, ZooId,
                         LEAD(AnimalId) OVER (ORDER BY AnimalId) AS NextAnimalId,
                         LEAD(ZooId) OVER (ORDER BY AnimalId) AS NextZooId,
+
                         LAG(AnimalId) OVER (ORDER BY AnimalId) AS PreviousAnimalId,
                         LAG(ZooId) OVER (ORDER BY AnimalId) AS PreviousZooId,
 		                ROW_NUMBER() Over(Order by AnimalId) as RowNumber
@@ -289,8 +295,14 @@ namespace ZooEase
                 firstAnimalId = Convert.ToInt32(row["FirstAnimalId"]);
                 lastAnimalId = Convert.ToInt32(row["LastAnimalId"]);
 
-                previousAnimalId = row["PreviousAnimalId"] as int?;
-                nextAnimalId = row["NextAnimalId"] as int?;
+                firstZooId = Convert.ToInt32(row["FirstZooId"]);
+                lastZooId = Convert.ToInt32(row["LastZooId"]);
+
+                previousAnimalId = Convert.ToInt32(row["PreviousAnimalId"]);
+                nextAnimalId = Convert.ToInt32(row["NextAnimalId"]);
+
+                previousZooId = Convert.ToInt32(row["PreviousZooId"]);
+                nextZooId = Convert.ToInt32(row["NextZooId"]);
             }
         }
 
@@ -300,35 +312,42 @@ namespace ZooEase
             if (sender == btnFirst)
             {
                 currentAnimalId = firstAnimalId;
+                currentZooId = firstZooId;
             }
-            else if (sender == btnNext && nextAnimalId.HasValue)
+            else if (sender == btnNext)
             {
                 currentAnimalId = nextAnimalId.Value;
+                currentZooId = nextZooId.Value;
             }
-            else if (sender == btnPrevious && previousAnimalId.HasValue)
+            else if (sender == btnPrevious)
             {
                 currentAnimalId = previousAnimalId.Value;
+                currentZooId = previousZooId.Value;
             }
             else if (sender == btnLast)
             {
                 currentAnimalId = lastAnimalId;
+                currentZooId = lastZooId;
             }
             else
             {
                 return;
             }
 
-            LoadAnimalDetails(currentAnimalId);
+            LoadAnimalDetails(currentAnimalId, currentZooId);
             LoadCurrentPosition();
-            EnableNavigation(true);
+            //EnableNavigation(true);
         }
 
         private void EnableNavigation(bool enable)
         {
             if (enable)
             {
-                btnPrevious.Enabled = previousAnimalId != null;
-                btnNext.Enabled = nextAnimalId != null;
+                btnPrevious.Enabled = previousAnimalId != null && previousZooId != null;
+                btnNext.Enabled = nextAnimalId != null && nextZooId != null;
+
+                btnNext.Enabled = nextAnimalId != null
+                    && nextZooId != null;
             }
             else
             {
@@ -353,8 +372,8 @@ namespace ZooEase
                 string country = txtCountry.Text.Trim();
 
                 string sql = $@"
-            INSERT INTO Animals (Species, ZooId, Country)
-            VALUES ('{species}', 
+                    INSERT INTO Animals (Species, ZooId, Country)
+                    VALUES ('{species}', 
                     (SELECT TOP 1 ZooId FROM Zoo WHERE ZooId = {zooId}), 
                     '{country}')";
 

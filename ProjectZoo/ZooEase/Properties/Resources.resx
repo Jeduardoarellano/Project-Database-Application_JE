@@ -127,14 +127,23 @@
   <data name="zoo_select" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\zoo_select.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Animals_form" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Animals_form.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="main-menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\main-menu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="animals_btn1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\animals_btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="splash_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\splash_image.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="menu_btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\menu_btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frm_zoo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\frm_zoo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="frm_animals" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\frm_animals.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,28 +157,22 @@
   <data name="login_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\login_image.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="menu_btn1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\menu_btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="50679-O6DLRD" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\50679-O6DLRD.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="animal_select1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\animal_select.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="splash_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\splash_image.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Zoo_form" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Zoo_form.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="menu_btn1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\menu_btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="zoo_btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\zoo_btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="frm_zoo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\frm_zoo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Zoo_form" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Zoo_form.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Animals_form" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\Animals_form.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ZooAnimals" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\ZooAnimals.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

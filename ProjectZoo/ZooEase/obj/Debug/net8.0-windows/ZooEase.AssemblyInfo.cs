@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZooEase")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99a9f9b5cce4d986cf01409edf1c4e13d392174d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+caf275e173b2d79c363d5b5403657ab76f50056c")]
 [assembly: System.Reflection.AssemblyProductAttribute("ZooEase")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZooEase")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

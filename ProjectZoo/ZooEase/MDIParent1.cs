@@ -73,6 +73,9 @@ namespace ZooEase
                 case "zoo_animals":
                     childForm = new frmZoo_Animals();
                     break;
+                case "zooanimals":
+                    childForm = new frmZooAnimlas();
+                    break;
             }
 
             if (childForm != null)
