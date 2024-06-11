@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yQ04V1RB6izOwfQK2RApl1hQOYLH+83mJ92TBk5Aww53NFSKqDu5afq2q2W15hzqnmnTLLDsYFOUwqpjMXCg5w==",
+  "dgSpecHash": "lahKnQz8gAvVRAU6CMYO229j3rtJ1//I8oqLGL6qlI53BwY5TmHuMrHE20X57WiwWpw5IBS0Yth4RJbYU/RMGg==",
   "success": true,
-  "projectFilePath": "C:\\NBCC\\SPRING TERM 2024\\DATABASE\\Project-Database-Application_JE\\ProjectZoo\\ZooEase\\ZooEase.csproj",
+  "projectFilePath": "C:\\src\\dbProg\\Project-Database-Application_JE\\ProjectZoo\\ZooEase\\ZooEase.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eduar\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\eduar\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

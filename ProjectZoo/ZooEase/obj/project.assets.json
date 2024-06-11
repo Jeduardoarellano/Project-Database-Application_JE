@@ -475,11 +475,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\NBCC\\SPRING TERM 2024\\DATABASE\\Project-Database-Application_JE\\ProjectZoo\\ZooEase\\ZooEase.csproj",
+      "projectUniqueName": "C:\\src\\dbProg\\Project-Database-Application_JE\\ProjectZoo\\ZooEase\\ZooEase.csproj",
       "projectName": "ZooEase",
-      "projectPath": "C:\\NBCC\\SPRING TERM 2024\\DATABASE\\Project-Database-Application_JE\\ProjectZoo\\ZooEase\\ZooEase.csproj",
+      "projectPath": "C:\\src\\dbProg\\Project-Database-Application_JE\\ProjectZoo\\ZooEase\\ZooEase.csproj",
       "packagesPath": "C:\\Users\\eduar\\.nuget\\packages\\",
-      "outputPath": "C:\\NBCC\\SPRING TERM 2024\\DATABASE\\Project-Database-Application_JE\\ProjectZoo\\ZooEase\\obj\\",
+      "outputPath": "C:\\src\\dbProg\\Project-Database-Application_JE\\ProjectZoo\\ZooEase\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\eduar\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -84,5 +84,10 @@ namespace ZooEase
             string connectionString = ConfigurationManager.ConnectionStrings["ZooEase"].ConnectionString;
             return connectionString;
         }
+
+        public static string SQLFix(string str)
+        {
+            return str.Replace("'", "''");
+        }
     }
 }

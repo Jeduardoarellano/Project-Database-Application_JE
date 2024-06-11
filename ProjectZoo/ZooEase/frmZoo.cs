@@ -266,10 +266,10 @@ namespace ZooEase
         {
             string sqlUpdateZoo = $@"
                 UPDATE Zoo
-                SET ZooName = '{txtName.Text.Trim()}',
-                    Country = '{txtCountry.Text}',
-                    City = '{txtCity.Text}'
-                WHERE ZooID = {txtZooId.Text}";
+                SET ZooName = '{DataAccess.SQLFix(txtName.Text.Trim())}',
+                    Country = '{DataAccess.SQLFix(txtCountry.Text)}',
+                    City = '{DataAccess.SQLFix(txtCity.Text)}'
+                WHERE ZooID = {DataAccess.SQLFix(txtZooId.Text)}";
 
             int rowsAffected = DataAccess.SendData(sqlUpdateZoo);
 
@@ -291,7 +291,7 @@ namespace ZooEase
         {
             string sqlInsertZoo = $@"
                 INSERT INTO Zoo (ZooName, Country, City)
-                VALUES ('{txtName.Text.Trim()}', '{txtCountry.Text}', '{txtCity.Text}')";
+                VALUES ('{DataAccess.SQLFix(txtName.Text.Trim())}', '{DataAccess.SQLFix(txtCountry.Text)}', '{DataAccess.SQLFix(txtCity.Text)}')";
 
             int rowsAffected = DataAccess.SendData(sqlInsertZoo);
 

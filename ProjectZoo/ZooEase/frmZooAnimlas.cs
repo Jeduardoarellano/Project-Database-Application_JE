@@ -184,6 +184,7 @@ namespace ZooEase
                 if (cmbAnimals.SelectedIndex != -1)
                 {
                     currentAnimalId = Convert.ToInt32(cmbAnimals.SelectedValue);
+                    currentZooId = Convert.ToInt32(cmbZoo.SelectedValue);
                     LoadAnimalDetails(currentAnimalId, currentZooId);
                     LoadCurrentPosition();
                     EnableNavigation(true);
@@ -204,7 +205,7 @@ namespace ZooEase
             cmbAnimals.ValueMember = "AnimalId";
             cmbAnimals.DataSource = dtAnimals;
 
-            cmbAnimals.SelectedIndex = -1; 
+            cmbAnimals.SelectedIndex = -1;
         }
 
 
@@ -236,7 +237,7 @@ namespace ZooEase
                 DataRow row = dtAnimalDetails.Rows[0];
                 txtSpecies.Text = row["Species"].ToString();
                 cmbAnimals.SelectedValue = Convert.ToInt32(row["AnimalId"].ToString());
-                cmbZoo.SelectedValue = Convert.ToInt32( row["ZooId"].ToString());
+                cmbZoo.SelectedValue = Convert.ToInt32(row["ZooId"].ToString());
                 txtCountry.Text = row["Country"].ToString();
             }
 
@@ -245,7 +246,7 @@ namespace ZooEase
         private void LoadFirstZoo_Animal()
         {
             string sql = @"
-                    SELECT TOP 1 a.AnimalId 
+                    SELECT TOP 1 a.AnimalId, a.ZooID 
                     FROM Zoo_Animals a
                     JOIN Animals za ON a.AnimalId = za.AnimalId
                     ORDER BY a.AnimalID";
@@ -255,6 +256,9 @@ namespace ZooEase
             {
                 firstAnimalId = Convert.ToInt32(firstAnimal.Rows[0]["AnimalId"]);
                 currentAnimalId = firstAnimalId;
+
+                firstZooId = Convert.ToInt32(firstAnimal.Rows[0]["ZooId"]);
+                currentZooId = firstZooId;
 
                 LoadAnimalDetails(currentAnimalId, currentZooId);
                 LoadCurrentPosition();
@@ -298,11 +302,11 @@ namespace ZooEase
                 firstZooId = Convert.ToInt32(row["FirstZooId"]);
                 lastZooId = Convert.ToInt32(row["LastZooId"]);
 
-                previousAnimalId = Convert.ToInt32(row["PreviousAnimalId"]);
-                nextAnimalId = Convert.ToInt32(row["NextAnimalId"]);
+                previousAnimalId = row["PreviousAnimalId"] != DBNull.Value ? Convert.ToInt32(row["PreviousAnimalId"]) : null;
+                nextAnimalId = row["NextAnimalId"] != DBNull.Value ? Convert.ToInt32(row["NextAnimalId"]) : null;
 
-                previousZooId = Convert.ToInt32(row["PreviousZooId"]);
-                nextZooId = Convert.ToInt32(row["NextZooId"]);
+                previousZooId = row["PreviousZooId"] != DBNull.Value ? Convert.ToInt32(row["PreviousZooId"]) : null;
+                nextZooId = row["NextZooId"] != DBNull.Value ? Convert.ToInt32(row["NextZooId"]) : null;
             }
         }
 
@@ -454,8 +458,7 @@ namespace ZooEase
 
             this.errorProvider1.SetError(cmb, errorMessage);
         }
-        #endregion
 
-
+#endregion
     }
 }

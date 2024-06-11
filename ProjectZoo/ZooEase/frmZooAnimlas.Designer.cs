@@ -102,6 +102,7 @@
             cmbAnimals.Name = "cmbAnimals";
             cmbAnimals.Size = new Size(207, 23);
             cmbAnimals.TabIndex = 4;
+            cmbAnimals.SelectionChangeCommitted += cmbAnimals_SelectedIndexChanged;
             cmbAnimals.Validating += cmb_Validating;
             // 
             // txtSpecies

@@ -1,0 +1,14 @@
+C:\src\dbProg\Project-Database-Application_JE\ProjectZoo\ZooEase\bin\Release\net8.0-windows\app.publish\ZooEase.exe
+C:\src\dbProg\Project-Database-Application_JE\ProjectZoo\ZooEase\bin\Release\net8.0-windows\app.publish\Images\50679-O6DLRD.jpg
+C:\src\dbProg\Project-Database-Application_JE\ProjectZoo\ZooEase\bin\Release\net8.0-windows\app.publish\Images\login_image.jpg
+C:\src\dbProg\Project-Database-Application_JE\ProjectZoo\ZooEase\bin\Release\net8.0-windows\app.publish\ZooEase.dll
+C:\src\dbProg\Project-Database-Application_JE\ProjectZoo\ZooEase\bin\Release\net8.0-windows\app.publish\ZooEase.deps.json
+C:\src\dbProg\Project-Database-Application_JE\ProjectZoo\ZooEase\bin\Release\net8.0-windows\app.publish\ZooEase.runtimeconfig.json
+C:\src\dbProg\Project-Database-Application_JE\ProjectZoo\ZooEase\bin\Release\net8.0-windows\app.publish\ZooEase.dll.config
+C:\src\dbProg\Project-Database-Application_JE\ProjectZoo\ZooEase\bin\Release\net8.0-windows\app.publish\ZooEase.pdb
+C:\src\dbProg\Project-Database-Application_JE\ProjectZoo\ZooEase\bin\Release\net8.0-windows\app.publish\System.Data.SqlClient.dll
+C:\src\dbProg\Project-Database-Application_JE\ProjectZoo\ZooEase\bin\Release\net8.0-windows\app.publish\runtimes\win-arm64\native\sni.dll
+C:\src\dbProg\Project-Database-Application_JE\ProjectZoo\ZooEase\bin\Release\net8.0-windows\app.publish\runtimes\win-x64\native\sni.dll
+C:\src\dbProg\Project-Database-Application_JE\ProjectZoo\ZooEase\bin\Release\net8.0-windows\app.publish\runtimes\win-x86\native\sni.dll
+C:\src\dbProg\Project-Database-Application_JE\ProjectZoo\ZooEase\bin\Release\net8.0-windows\app.publish\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\src\dbProg\Project-Database-Application_JE\ProjectZoo\ZooEase\bin\Release\net8.0-windows\app.publish\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
