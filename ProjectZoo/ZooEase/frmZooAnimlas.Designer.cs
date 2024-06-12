@@ -262,9 +262,10 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.ZooAnimals;
-            ClientSize = new Size(714, 448);
+            ClientSize = new Size(799, 448);
             Controls.Add(grpZooAnimals);
             Name = "frmZooAnimlas";
+            StartPosition = FormStartPosition.CenterScreen;
             Tag = "zooanimals";
             Text = "frmZooAnimlas";
             Load += frmZooAnimlas_Load;

@@ -6,6 +6,8 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Version>8.0</Version>
+    <Product>Zoo Administration</Product>
   </PropertyGroup>
 
   <ItemGroup>

@@ -11,7 +11,7 @@ namespace ZooEase
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            //Application.Run(new frmZooAnimlas());
+            //Application.Run(new frmZoo());
             Application.Run(new MDIParent1());
             //Application.Run(new frmAnimals_Zoo());
         }

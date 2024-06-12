@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "ZooEase/1.0.0": {
+      "ZooEase/8.0": {
         "dependencies": {
           "System.Data.SqlClient": "4.8.6"
         },
@@ -92,7 +92,7 @@
     }
   },
   "libraries": {
-    "ZooEase/1.0.0": {
+    "ZooEase/8.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

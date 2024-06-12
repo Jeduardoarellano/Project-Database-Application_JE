@@ -99,8 +99,14 @@ namespace ZooEase
                     {
                         if (currentState == FormState.Add)
                         {
-                            CreateAnimal();
-                            LoadFirstZoo_Animal();
+                            if (CreateAnimal())
+                            {
+                                // If the animal was successfully created, create the relation in Zoo_Animals
+                                string animalId = GetLastInsertedAnimalID().ToString();
+                                string zooId = cmbZoo.SelectedValue.ToString();
+                                CreateZooAnimalRelation(animalId, zooId);
+                                LoadFirstZoo_Animal();
+                            }
                         }
                         else
                         {
@@ -113,9 +119,39 @@ namespace ZooEase
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
+        }
+
+        private void CreateZooAnimalRelation(string animalId, string zooId)
+        {
+            try
+            {
+                string sql = $@"
+            INSERT INTO Zoo_Animals (ZooID, AnimalID)
+            VALUES ({zooId}, {animalId})";
+
+                int rowsAffected = DataAccess.SendData(sql);
+
+                if (rowsAffected == 1)
+                {
+                    MessageBox.Show("Animal assigned to zoo.");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to assign animal to zoo.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
+        }
+
+        private int GetLastInsertedAnimalID()
+        {
+            string sqlGetLastID = "SELECT TOP 1 AnimalID FROM Animals ORDER BY AnimalID DESC";
+            return Convert.ToInt32(DataAccess.GetValue(sqlGetLastID));
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -367,19 +403,16 @@ namespace ZooEase
 
         #region Send Data
 
-        private void CreateAnimal()
+        private bool CreateAnimal()
         {
             try
             {
                 string species = txtSpecies.Text.Trim();
-                string zooId = cmbZoo.SelectedValue.ToString();
                 string country = txtCountry.Text.Trim();
 
                 string sql = $@"
-                    INSERT INTO Animals (Species, ZooId, Country)
-                    VALUES ('{species}', 
-                    (SELECT TOP 1 ZooId FROM Zoo WHERE ZooId = {zooId}), 
-                    '{country}')";
+            INSERT INTO Animals (Species, Country)
+            VALUES ('{species}', '{country}')";
 
                 int rowsAffected = DataAccess.SendData(sql);
 
@@ -387,16 +420,18 @@ namespace ZooEase
                 {
                     MessageBox.Show("Animal was created");
                     LoadAnimals();
-                    LoadFirstZoo_Animal();
+                    return true;
                 }
                 else
                 {
-                    MessageBox.Show("Failed to save Animal. Ensure the zoo exists.");
+                    MessageBox.Show("Failed to save Animal.");
+                    return false;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
+                return false;
             }
         }
 

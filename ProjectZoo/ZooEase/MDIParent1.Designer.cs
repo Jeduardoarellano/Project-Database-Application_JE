@@ -46,6 +46,9 @@
             menuToolStripMenuItem = new ToolStripMenuItem();
             animalsToolStripMenuItem = new ToolStripMenuItem();
             zooToolStripMenuItem = new ToolStripMenuItem();
+            animalsAndZoosToolStripMenuItem = new ToolStripMenuItem();
+            browseAnimalsToolStripMenuItem = new ToolStripMenuItem();
+            browseZoosToolStripMenuItem = new ToolStripMenuItem();
             viewMenu = new ToolStripMenuItem();
             toolBarToolStripMenuItem = new ToolStripMenuItem();
             statusBarToolStripMenuItem = new ToolStripMenuItem();
@@ -180,7 +183,7 @@
             // 
             // menuToolStripMenuItem
             // 
-            menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { animalsToolStripMenuItem, zooToolStripMenuItem });
+            menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { animalsToolStripMenuItem, zooToolStripMenuItem, animalsAndZoosToolStripMenuItem, browseAnimalsToolStripMenuItem, browseZoosToolStripMenuItem });
             menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             menuToolStripMenuItem.Size = new Size(50, 20);
             menuToolStripMenuItem.Text = "Menu";
@@ -188,7 +191,7 @@
             // animalsToolStripMenuItem
             // 
             animalsToolStripMenuItem.Name = "animalsToolStripMenuItem";
-            animalsToolStripMenuItem.Size = new Size(117, 22);
+            animalsToolStripMenuItem.Size = new Size(169, 22);
             animalsToolStripMenuItem.Tag = "animals";
             animalsToolStripMenuItem.Text = "Animals";
             animalsToolStripMenuItem.Click += ShowNewForm;
@@ -196,10 +199,34 @@
             // zooToolStripMenuItem
             // 
             zooToolStripMenuItem.Name = "zooToolStripMenuItem";
-            zooToolStripMenuItem.Size = new Size(117, 22);
+            zooToolStripMenuItem.Size = new Size(169, 22);
             zooToolStripMenuItem.Tag = "zoo";
             zooToolStripMenuItem.Text = "Zoo";
             zooToolStripMenuItem.Click += ShowNewForm;
+            // 
+            // animalsAndZoosToolStripMenuItem
+            // 
+            animalsAndZoosToolStripMenuItem.Name = "animalsAndZoosToolStripMenuItem";
+            animalsAndZoosToolStripMenuItem.Size = new Size(169, 22);
+            animalsAndZoosToolStripMenuItem.Tag = "zooAnimals";
+            animalsAndZoosToolStripMenuItem.Text = "Animals and Zoos";
+            animalsAndZoosToolStripMenuItem.Click += ShowNewForm;
+            // 
+            // browseAnimalsToolStripMenuItem
+            // 
+            browseAnimalsToolStripMenuItem.Name = "browseAnimalsToolStripMenuItem";
+            browseAnimalsToolStripMenuItem.Size = new Size(169, 22);
+            browseAnimalsToolStripMenuItem.Tag = "animals_zoo";
+            browseAnimalsToolStripMenuItem.Text = "Browse Animals";
+            browseAnimalsToolStripMenuItem.Click += ShowNewForm;
+            // 
+            // browseZoosToolStripMenuItem
+            // 
+            browseZoosToolStripMenuItem.Name = "browseZoosToolStripMenuItem";
+            browseZoosToolStripMenuItem.Size = new Size(169, 22);
+            browseZoosToolStripMenuItem.Tag = "zoo_animals";
+            browseZoosToolStripMenuItem.Text = "Browse Zoos";
+            browseZoosToolStripMenuItem.Click += ShowNewForm;
             // 
             // viewMenu
             // 
@@ -414,7 +441,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            BackgroundImage = Properties.Resources.main_menu;
+            BackgroundImage = Properties.Resources.main_menu_01;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(897, 595);
             Controls.Add(statusStrip);
@@ -423,6 +450,8 @@
             IsMdiContainer = true;
             MainMenuStrip = menuStrip;
             Margin = new Padding(4, 3, 4, 3);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "MDIParent1";
             RightToLeft = RightToLeft.No;
             StartPosition = FormStartPosition.CenterScreen;
@@ -484,6 +513,9 @@
         private ToolStripButton toolStripButton3;
         private ToolStripButton toolStripButton4;
         private ToolStripButton toolStripButton5;
+        private ToolStripMenuItem animalsAndZoosToolStripMenuItem;
+        private ToolStripMenuItem browseAnimalsToolStripMenuItem;
+        private ToolStripMenuItem browseZoosToolStripMenuItem;
     }
 }
 

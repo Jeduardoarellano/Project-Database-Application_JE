@@ -71,6 +71,7 @@
             Controls.Add(button1);
             Controls.Add(dgvAnimals);
             Name = "frmZoo_Animals";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmZoo_Animals";
             Load += frmZoo_Animals_Load;
             ((System.ComponentModel.ISupportInitialize)dgvAnimals).EndInit();

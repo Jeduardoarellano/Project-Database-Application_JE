@@ -71,7 +71,9 @@
             Controls.Add(cmbAnimals);
             Controls.Add(button1);
             Controls.Add(dgvZoos);
+            DoubleBuffered = true;
             Name = "frmAnimals_Zoo";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmAnimals_Zoo";
             Load += frmAnimals_Zoo_Load;
             ((System.ComponentModel.ISupportInitialize)dgvZoos).EndInit();

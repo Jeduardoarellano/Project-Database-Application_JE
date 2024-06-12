@@ -33,9 +33,6 @@
             timer1 = new System.Windows.Forms.Timer(components);
             button1 = new Button();
             label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
             pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -65,33 +62,6 @@
             label1.TabIndex = 2;
             label1.Text = "https//:zooease.ca";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(308, 9);
-            label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 3;
-            label2.Text = "label2";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(540, 10);
-            label3.Name = "label3";
-            label3.Size = new Size(38, 15);
-            label3.TabIndex = 4;
-            label3.Text = "label3";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(48, 10);
-            label4.Name = "label4";
-            label4.Size = new Size(38, 15);
-            label4.TabIndex = 5;
-            label4.Text = "label4";
-            // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -109,9 +79,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             ControlBox = false;
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(pictureBox1);
@@ -133,9 +100,6 @@
         private System.Windows.Forms.Timer timer1;
         private Button button1;
         private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
         private PictureBox pictureBox1;
     }
 }

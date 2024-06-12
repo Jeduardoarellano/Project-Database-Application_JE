@@ -173,6 +173,16 @@ namespace ZooEase.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap main_menu_01 {
+            get {
+                object obj = ResourceManager.GetObject("main-menu-01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap menu_btn {
             get {
                 object obj = ResourceManager.GetObject("menu_btn", resourceCulture);

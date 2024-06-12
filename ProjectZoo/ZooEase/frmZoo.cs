@@ -289,21 +289,60 @@ namespace ZooEase
 
         private void CreateZoo()
         {
-            string sqlInsertZoo = $@"
-                INSERT INTO Zoo (ZooName, Country, City)
-                VALUES ('{DataAccess.SQLFix(txtName.Text.Trim())}', '{DataAccess.SQLFix(txtCountry.Text)}', '{DataAccess.SQLFix(txtCity.Text)}')";
+            string zooName = DataAccess.SQLFix(txtName.Text.Trim());
 
-            int rowsAffected = DataAccess.SendData(sqlInsertZoo);
+            // Get the ZooID for the specified ZooName
+            int zooID = GetZooID(zooName);
 
-            if (rowsAffected == 1)
+            if (zooID == -1)
             {
-                MessageBox.Show("Zoo created.");
+                // Insert the new Zoo if it doesn't exist
+                string sqlInsertZoo = $@"
+            INSERT INTO Zoo (ZooName, Country, City)
+            VALUES ('{zooName}', '{DataAccess.SQLFix(txtCountry.Text)}', '{DataAccess.SQLFix(txtCity.Text)}')";
+
+                int rowsAffected = DataAccess.SendData(sqlInsertZoo);
+
+                if (rowsAffected == 1)
+                {
+                    MessageBox.Show("Zoo created.");
+                }
+                else
+                {
+                    MessageBox.Show("The database reported no rows affected.");
+                }
+            }
+            else if (GetAnimalCountForZoo(zooID) < 3)
+            {
+                MessageBox.Show("The zoo already exists but it has less than 3 animals.");
             }
             else
             {
-                MessageBox.Show("The database reported no rows affected.");
+                MessageBox.Show("The zoo cannot be created because it already has 3 animals assigned.");
             }
         }
+
+        private int GetZooID(string zooName)
+        {
+            string sqlGetZooID = $@"
+        SELECT ZooID
+        FROM Zoo
+        WHERE ZooName = '{zooName}'";
+
+            object result = DataAccess.GetValue(sqlGetZooID);
+            return result != null ? Convert.ToInt32(result) : -1;
+        }
+
+        private int GetAnimalCountForZoo(int zooID)
+        {
+            string sqlCountAnimals = $@"
+        SELECT COUNT(*) 
+        FROM Zoo_Animals 
+        WHERE ZooID = {zooID}";
+
+            return Convert.ToInt32(DataAccess.GetValue(sqlCountAnimals));
+        }
+
 
         private void DeleteZoo()
         {
